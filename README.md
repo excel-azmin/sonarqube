@@ -2,7 +2,7 @@
 
 * Increase vm.max_map_count: On your host machine, run the following command to temporarily increase the limit:
 
-``
+```
 sudo sysctl -w vm.max_map_count=262144
 ```
 
@@ -14,6 +14,7 @@ sudo nano /etc/sysctl.conf
 #Update this 
 vm.max_map_count=262144
 ```
+
 * Then, reload the sysctl settings:
 
 ```
