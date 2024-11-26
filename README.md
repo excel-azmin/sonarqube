@@ -91,3 +91,53 @@ networks:
     external: true 
 ```
 
+# Install Scanner 
+
+
+* Install Java (SonarScanner requires Java):
+
+```
+sudo apt update
+sudo apt install openjdk-11-jdk
+```
+
+* Download SonarScanner:
+
+Download the latest version of SonarScanner from the official SonarSource website: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/#download
+
+```
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+```
+* Extract the SonarScanner ZIP file:
+
+```
+unzip sonar-scanner-cli-4.7.0.2747-linux.zip
+sudo mv sonar-scanner-4.7.0.2747-linux /opt/sonar-scanner
+```
+
+* Set up environment variables:
+
+* Open `.bashrc` or `.zshrc` file:
+
+```
+nano ~/.bashrc
+```
+* Add the following line at the end:
+
+```
+export SONAR_SCANNER_HOME=/opt/sonar-scanner
+export PATH=$SONAR_SCANNER_HOME/bin:$PATH
+```
+
+* Save the file and reload the environment:
+
+```
+source ~/.bashrc
+```
+
+* Verify the installation:
+
+```
+sonar-scanner --version
+```
+
